@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# Uruchamianie aplikacji w trybie developerskim
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Wybrać odpowiednią wersję, wersja do pobrania z brancha master jest wersją developerską. Aby pobrać wersję pod deployment należy pobrać release
+2. Zaintalować node.js i npm najlepiej w wersjach odpowiednio v25.3.0 i 11.7.0
+3. Wejść w folder zawierający część front-endową aplikacji i wykonać komendę npm i
+4. Po zakończeniu pracy komendy wykonać komendę npm start
+5. Uruchomić serwer bazy danych PostgreSQL (Polecam program PGAdmin)
+6. Uruchomić w bazie danych skrypt podany w plikach projektu
+7. Uruchomić wybrane IDE i otworzyć w nim część back-endową 
+8. Uruchomić Projekt w IDE (Wymagana java 21)
+9. Projekt powinien dzialać na portach 3000 i 8080 oraz 5432 dla bazy danych
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+# Uruchamianie aplikacji w trybie deploymentu lokalnie
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Pobrać najnowszy release
+2. Zainstalować pliki back-endowe na wybranym serwerze akceptującym aplikacje javy w formacie JRE 
+3. Zainstalować pliki front-endowe na wybranym serwerze akceptującym aplikacje webowe
+4. Zainstalować na serwerze bazy danych PostgreSQL Plik zawierający zrzut struktury bazy danych
+5. Upewnić się, że aplikacje dzialają na portach 3000, 8080 i 5432 oraz są hostowane w tym samym środowisku sieciowym
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Uruchamianie aplikacji w trybie deploymentu normalnie
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Pobrać najnowszy release
+2. Wykonać instrukcje podane do uruchomienia aplikacji w trybie developerskim
+3. Podać w części front-endowej w pliku package.json adres serwera back-endu jako proxy
+4. Podać adres serwera bazy danych w pliku application.properties oraz podać parametry polaczenia
+5. Wykonać w części front-endowej komendę npm build, w katalogu build powinny się pojawić pliki, które musimy zainstalować na serwerze docelowym front-endu
+6. Wykonać instrukcję mvn package, i uruchomić na serwerze back-endu plik znajdujący się w katalogu target w formacie JAR
+7. Uruchomić serwer bazy danych na adresie wskazanym w konfiguracji back-endu

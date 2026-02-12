@@ -1,0 +1,16 @@
+
+
+.taskTable {
+  border-radius: 15%;
+  align-self: flex-end;
+  position: absolute;
+}
+
+.buttons {
+  padding-top: 1vh;
+  display: flex;
+  width: 7.5vw;
+  justify-content: space-between;
+ 
+}
+
