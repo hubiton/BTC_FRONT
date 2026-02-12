@@ -23,13 +23,13 @@ function App() {
   ];
 
   const updateData = () => {
-    axios.get("/api/v1/task").then((response) => {
+    axios.post("http://localhost:8080/api/v1/task/all").then((response) => {
       setData(response.data);
     });
   };
 
   const changeState = async (record) => {
-    await axios.patch("/api/v1/task", { ...record, done: !record.done });
+    await axios.patch("http://localhost:8080/api/v1/task", { ...record, done: !record.done });
     updateData();
   };
 
@@ -73,7 +73,7 @@ function App() {
 
   const handleDelete = async () => {
     console.log(toDelete);
-    await axios.delete("/api/v1/task", {
+    await axios.delete("http://localhost:8080/api/v1/task", {
       data: toDelete,
       headers: {
         "Content-Type": "application/json",
@@ -83,12 +83,12 @@ function App() {
   };
 
   const handleEdit = async (record) => {
-    await axios.patch("/api/v1/task", record);
+    await axios.patch("http://localhost:8080/api/v1/task", record);
     updateData();
   };
 
   const handleCreate = async (record) => {
-    await axios.post("/api/v1/task", record);
+    await axios.post("http://localhost:8080/api/v1/task", record);
     updateData();
   };
 

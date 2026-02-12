@@ -9,7 +9,7 @@ export default function AuthPage() {
 
   const handleLogin = async () => {
     let res = "";
-    await axios.get(`/api/v1/login/${login}/${pass}`).then((response) => {
+    await axios.post(`http://localhost:8080/api/v1/login/${login}/${pass}`).then((response) => {
       res = response.data;
     });
     console.log(res);
@@ -21,7 +21,7 @@ export default function AuthPage() {
 
   const handleRegister = async () => {
     let res = "";
-    await axios.get(`/api/v1/register/${login}/${pass}`).then((response) => {
+    await axios.post(`http://localhost:8080/api/v1/register/${login}/${pass}`).then((response) => {
       res = response.data;
     });
     if (res === login) {
