@@ -16,7 +16,7 @@
 
 1. Pobrać najnowszy release
 2. Zainstalować pliki back-endowe na wybranym serwerze akceptującym aplikacje javy w formacie JRE 
-3. Zainstalować pliki front-endowe na wybranym serwerze akceptującym aplikacje webowe
+3. Zainstalować pliki front-endowe na wybranym serwerze akceptującym aplikacje react i uruchomić za pomocą polecenia 'serve -s build' (aby zainstalować pakiet serve należy użyć 'npm i serve')
 4. Zainstalować na serwerze bazy danych PostgreSQL Plik zawierający zrzut struktury bazy danych
 5. Upewnić się, że aplikacje dzialają na portach 3000, 8080 i 5432 oraz są hostowane w tym samym środowisku sieciowym
 
@@ -26,6 +26,7 @@
 2. Wykonać instrukcje podane do uruchomienia aplikacji w trybie developerskim
 3. Podać w części front-endowej w pliku package.json adres serwera back-endu jako proxy
 4. Podać adres serwera bazy danych w pliku application.properties oraz podać parametry polaczenia
-5. Wykonać w części front-endowej komendę npm build, w katalogu build powinny się pojawić pliki, które musimy zainstalować na serwerze docelowym front-endu
-6. Wykonać instrukcję mvn package, i uruchomić na serwerze back-endu plik znajdujący się w katalogu target w formacie JAR
-7. Uruchomić serwer bazy danych na adresie wskazanym w konfiguracji back-endu
+5. Wykonać w części front-endowej komendę npm build, w katalogu build powinny się pojawić pliki
+6. Zainstalować pliki front-endowe na wybranym serwerze akceptującym aplikacje react i uruchomić za pomocą polecenia 'serve -s build' (aby zainstalować pakiet serve należy użyć 'npm i serve')
+7. Wykonać instrukcję mvn package, i uruchomić na serwerze back-endu plik znajdujący się w katalogu target w formacie JAR
+8. Uruchomić serwer bazy danych na adresie wskazanym w konfiguracji back-endu
